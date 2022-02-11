@@ -47,7 +47,7 @@ SOFTWARE.
 
 # Author
 
-Suns & Moon Laboratory
-https://www.s-m-l.org
-https://github.com/mikekoma/SSSM-AQM1602XA
-twitter @mikekoma
+Suns & Moon Laboratory  
+https://www.s-m-l.org  
+https://github.com/mikekoma/SSSM-AQM1602XA  
+https://twitter.com/mikekoma  
