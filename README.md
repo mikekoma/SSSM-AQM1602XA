@@ -12,7 +12,8 @@ Arduino library for LCD AQM1602XA.
 
 The LCD AQM1602XA displays 16 digits and 2 lines. It is controlled by I2C.
 
-Xiamen Zettler Electronics Co., Ltd. AQM1602XA-RN-GBW
+Xiamen Zettler Electronics Co., Ltd.  
+AQM1602XA-RN-GBW  
 https://akizukidenshi.com/catalog/g/gP-08779/
 
 
