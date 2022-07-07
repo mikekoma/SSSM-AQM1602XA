@@ -35,7 +35,7 @@ void AQM1602XA::writeData(byte t_data)
   Wire.write(0x40);
   Wire.write(t_data);
   Wire.endTransmission();
-  delay(1);
+  delayMicroseconds(30);
 }
 
 void AQM1602XA::cursorOn(bool cursor_on, bool blink_on)
@@ -45,32 +45,32 @@ void AQM1602XA::cursorOn(bool cursor_on, bool blink_on)
   val |= cursor_on ? 0x02 : 0;
   val |= blink_on ? 0x01 : 0;
   writeCommand(val);
-  delay(20);
+  delayMicroseconds(30);
 }
 
 void AQM1602XA::init_lcd()
 {
   delay(100);
   writeCommand(0x38); // FUNCTION SET
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x39); // IS=1
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x14); // INT OSC FREQUENCY
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x7C); // CONTRAST SET 0,1,2,3
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x54); // CONTRAST SET 4,5
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x6C); // F0LLOWER CONTROL
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x38); // IS=0
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x0C); // Display ON
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x01); // clear Display
-  delay(20);
+  delayMicroseconds(1020);
   writeCommand(0x06); // Entry Mode
-  delay(20);
+  delayMicroseconds(30);
 }
 
 void AQM1602XA::begin()
@@ -91,15 +91,15 @@ void AQM1602XA::begin()
 void AQM1602XA::contrast(int val)
 {
   writeCommand(0x38); // FUNCTION SET
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x39); // IS=1
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x70 | (byte)(val & 0x0F)); // CONTRAST SET 0,1,2,3
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x54 | (byte)(val >> 4 & 0x03)); // CONTRAST SET 4,5
-  delay(20);
+  delayMicroseconds(30);
   writeCommand(0x06); // Entry Mode
-  delay(20);
+  delayMicroseconds(30);
 }
 
 int AQM1602XA::width()
