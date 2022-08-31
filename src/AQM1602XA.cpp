@@ -88,6 +88,18 @@ void AQM1602XA::begin()
   Wire.endTransmission();
 }
 
+void AQM1602XA::on()
+{
+  writeCommand(0x0C); // Display ON
+  delayMicroseconds(30);
+}
+
+void AQM1602XA::off()
+{
+  writeCommand(0x08); // Display OFF
+  delayMicroseconds(30);
+}
+
 void AQM1602XA::contrast(int val)
 {
   writeCommand(0x38); // FUNCTION SET

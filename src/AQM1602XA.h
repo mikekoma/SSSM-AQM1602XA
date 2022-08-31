@@ -28,6 +28,8 @@ class AQM1602XA
     void cursorOn(bool cursor_on , bool blink_on = false);
   public:
     void begin();
+    void on();
+    void off();
     void contrast(int val);
 
     int width();
