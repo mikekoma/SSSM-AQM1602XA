@@ -19,6 +19,10 @@ https://akizukidenshi.com/catalog/g/gP-08779/
 # History
 
 2020-02-11 VER 1.0.0
+最初のリリース
+
+2024-01-14 VER 1.1.0
+Wireを指定可能にした
 
 # Licence
 
