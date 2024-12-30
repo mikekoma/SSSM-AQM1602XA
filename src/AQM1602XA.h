@@ -3,7 +3,7 @@
 AQM1602XA.h
 
 # Version
-1.0.0
+1.1.0
 
 # Target device
 Xiamen Zettler Electronics Co., Ltd. AQM1602XA-RN-GBW
@@ -15,11 +15,13 @@ https://www.s-m-l.org
 */
 #ifndef AQM1602XA_h
 #define AQM1602XA_h
-#include "Arduino.h"
+#include <Arduino.h>
+#include <Wire.h>
 
 class AQM1602XA
 {
   private:
+    TwoWire *wire;
     bool flag_cursor_on;
     bool flag_blink_on;
     void init_lcd();
@@ -27,7 +29,7 @@ class AQM1602XA
     void writeData(byte t_data);
     void cursorOn(bool cursor_on , bool blink_on = false);
   public:
-    void begin();
+    void begin(TwoWire *prm_wire);
     void on();
     void off();
     void contrast(int val);

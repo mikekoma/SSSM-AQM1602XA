@@ -3,7 +3,7 @@
 AQM1602XA.cpp
 
 # Version
-1.0.0
+1.1.0
 
 # Target device
 Xiamen Zettler Electronics Co., Ltd. AQM1602XA-RN-GBW
@@ -14,27 +14,26 @@ Suns & Moon Laboratory
 https://www.s-m-l.org
 */
 #include <Arduino.h>
-#include <Wire.h>
+#include <wire.h>
 #include "AQM1602XA.h"
 
 #define DEVICE_ADDRESS  0x3E
 
 void AQM1602XA::writeCommand(byte t_command)
 {
-  Wire.begin();
-  Wire.beginTransmission(DEVICE_ADDRESS);
-  Wire.write(0x00);
-  Wire.write(t_command);
-  Wire.endTransmission();
+  wire->beginTransmission(DEVICE_ADDRESS);
+  wire->write(0x00);
+  wire->write(t_command);
+  wire->endTransmission();
   delay(10);
 }
 
 void AQM1602XA::writeData(byte t_data)
 {
-  Wire.beginTransmission(DEVICE_ADDRESS);
-  Wire.write(0x40);
-  Wire.write(t_data);
-  Wire.endTransmission();
+  wire->beginTransmission(DEVICE_ADDRESS);
+  wire->write(0x40);
+  wire->write(t_data);
+  wire->endTransmission();
   delayMicroseconds(30);
 }
 
@@ -73,8 +72,10 @@ void AQM1602XA::init_lcd()
   delayMicroseconds(30);
 }
 
-void AQM1602XA::begin()
+void AQM1602XA::begin(TwoWire *prm_wire)
 {
+  wire = prm_wire;
+  
   flag_cursor_on = false;
   flag_blink_on = false;
 
@@ -82,10 +83,10 @@ void AQM1602XA::begin()
 
   //  writeCommand(0x02);
 
-  Wire.beginTransmission(DEVICE_ADDRESS);
-  Wire.write(0x20);
-  Wire.write(0x01);
-  Wire.endTransmission();
+  wire->beginTransmission(DEVICE_ADDRESS);
+  wire->write(0x20);
+  wire->write(0x01);
+  wire->endTransmission();
 }
 
 void AQM1602XA::on()
