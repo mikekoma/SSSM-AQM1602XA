@@ -3,11 +3,17 @@
 AQM1602XA.h
 
 # Version
-1.1.0
+1.2.0
 
 # Target device
-Xiamen Zettler Electronics Co., Ltd. AQM1602XA-RN-GBW
+
+AQM1602XA-RN-GBW
+Xiamen Zettler Electronics Co., Ltd. 
 https://akizukidenshi.com/catalog/g/gP-08779/
+
+AQM0802A-RN-GBW
+Xiamen Zettler Electronics Co., Ltd. 
+https://akizukidenshi.com/catalog/g/g106669
 
 # Author
 Suns & Moon Laboratory
@@ -26,10 +32,10 @@ class AQM1602XA
     bool flag_blink_on;
     void init_lcd();
     void writeCommand(byte t_command);
-    void writeData(byte t_data);
     void cursorOn(bool cursor_on , bool blink_on = false);
   public:
     void begin(TwoWire *prm_wire);
+
     void on();
     void off();
     void contrast(int val);
@@ -45,7 +51,12 @@ class AQM1602XA
     void blink();
     void noBlink();
 
+    void writeCGRAM(int cgram_adr, byte* data, int count);
+
     void write(char ch);
+    void writeData(byte t_data);
+    void writeBufferData(byte *buf, int len);
+
     void print(char *str);
     void print(int val);
 };
