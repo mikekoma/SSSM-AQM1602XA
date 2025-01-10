@@ -3,7 +3,7 @@
 AQM1602XA.cpp
 
 # Version
-1.1.0
+1.2.0
 
 # Target device
 Xiamen Zettler Electronics Co., Ltd. AQM1602XA-RN-GBW

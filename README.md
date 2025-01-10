@@ -25,6 +25,9 @@ https://akizukidenshi.com/catalog/g/gP-08779/
 2024-01-14 VER 1.1.0
 Wireを指定可能にした
 
+2025-01-09 VER 1.2.0
+CGRAM書き換え実装
+
 # Licence
 
 MIT License
