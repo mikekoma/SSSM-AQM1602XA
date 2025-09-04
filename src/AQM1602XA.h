@@ -57,7 +57,7 @@ class AQM1602XA
     void writeData(byte t_data);
     void writeBufferData(byte *buf, int len);
 
-    void print(char *str);
+    void print(const char *str);
     void print(int val);
 };
 

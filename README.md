@@ -28,6 +28,9 @@ Wireを指定可能にした
 2025-01-09 VER 1.2.0
 CGRAM書き換え実装
 
+2025-09-04 VER 1.2.1
+printの引数をconst char*に変更
+
 # Licence
 
 MIT License

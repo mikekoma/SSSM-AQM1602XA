@@ -169,7 +169,7 @@ void AQM1602XA::write(char ch) {
   writeData(ch);
 }
 
-void AQM1602XA::print(char *str) {
+void AQM1602XA::print(const char *str) {
   int count = strlen(str);
   writeBufferData((byte*)str, count);
 }
